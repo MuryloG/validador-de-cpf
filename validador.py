@@ -21,7 +21,25 @@ while True:
 
     if erro:
         continue # Reinicia o codigo
-            
 
-    print(lista_num)
+    nove_digitos = lista_num[:9]
+    soma = 0
+    mult = 10
+
+    for i in nove_digitos:
+        soma = soma + (i * mult)
+        mult = mult -1
+            
+    resto_div = soma % 11
+
+    if resto_div < 2:
+        primeiro_digito = 0
+
+    else:
+        primeiro_digito = 11 - resto_div
+
+    if primeiro_digito != lista_num[9]:
+        print('CPF inválido')
+
+    print(primeiro_digito)
 
