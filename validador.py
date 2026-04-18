@@ -1,3 +1,5 @@
+import os
+
 while True:
 
     erro = False # Flag de erro caso o try cause erro
@@ -14,7 +16,7 @@ while True:
             # Transforma os caracteres do CPF digitado em int
             
         except ValueError:
-            print(f'O caractere {i} não é um número válido e foi ignorado')
+            print(f'\nO caractere "{i}" não é um número válido e foi ignorado\n')
             erro = True # Transforma a flag em verdadeira
             break
 
@@ -64,4 +66,13 @@ while True:
         continue
 
     else:
-        print(f'\nO CPF {cpf_input} É VÁLIDO!\n')
+        loop = input(f'\nO CPF {cpf_input} É VÁLIDO!\n\nGostaria de validar outro CPF (S/N/Sim/Não)?\n').upper()[0]
+
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+        if loop == 'S':
+            continue
+
+        else:
+            print('Programa encerrado!')
+            break
