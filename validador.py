@@ -2,12 +2,12 @@ import os
 
 while True:
 
-    erro = False # Flag de erro caso o try cause erro
+    cpf_input = input('Digite o seu CPF utilizando apenas números e sem pontuação: ')
+    lista_cpf = list(cpf_input) # Separa cada caractere do CPF em um indice na lista
 
     lista_num = []
 
-    cpf_input = input('Digite o seu CPF utilizando apenas números e sem pontuação: ')
-    lista_cpf = list(cpf_input) # Separa cada caractere do CPF em um indice na lista
+    erro = False # Flag de erro caso o try cause erro
 
     for i in lista_cpf:
         try:
@@ -68,7 +68,7 @@ while True:
     else:
         loop = input(f'\nO CPF {cpf_input} É VÁLIDO!\n\nGostaria de validar outro CPF (S/N/Sim/Não)?\n').upper()[0]
 
-        os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear') # Limpa o terminal
 
         if loop == 'S':
             continue
@@ -76,3 +76,4 @@ while True:
         else:
             print('Programa encerrado!')
             break
+        # Encerra o loop
